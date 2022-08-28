@@ -1,8 +1,28 @@
+from tracemalloc import reset_peak
 import requests
 import creds
 
-base_url = "https://api.twelvedata.com/time_series?"
-ticker = input("Enter ticker symbol you want to view:" )
-request_url = f"{base_url}symbol={ticker}&interval=1day&apikey={creds.api_key}"
-data = requests.get(request_url).json()
-print(data["values"][0])            # prints most current data
+base_url = "https://api.twelvedata.com/"
+
+# Real-Time Price
+
+#ticker_symbol = input("Enter ticker symbol you want to view: ").upper()
+#rtp_url = f"{base_url}price?symbol={ticker_symbol}&apikey={creds.api_key}"
+#rtp_data = requests.get(rtp_url).json()
+#print(ticker_symbol)
+#print(rtp_data)
+
+# Quote
+
+#ticker_symbol = input("Enter ticker symbol you want to view: ").upper()
+#quote_url = f"{base_url}quote?symbol={ticker_symbol}&apikey={creds.api_key}"
+#quote_data = requests.get(quote_url).json()
+#print(ticker_symbol)
+#print(quote_data)
+
+# Times Series
+
+ticker_symbol = input("Enter ticker symbol you want to view:" ).upper()
+ts_url = f"{base_url}time_series?symbol={ticker_symbol}&interval=1day&apikey={creds.api_key}"
+ts_data = requests.get(ts_url).json()
+print(ts_data["values"])            
