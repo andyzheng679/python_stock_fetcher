@@ -1,5 +1,6 @@
 import requests
 import creds
+import pandas as pd
 
 
 base_url = "https://api.twelvedata.com/"
@@ -35,25 +36,25 @@ class quotes:
         ticker_symbol = input("Enter ticker symbol you want to view: ").upper()
         quote_url = f"{base_url}quote?symbol={ticker_symbol}&apikey={creds.api_key}"
         quote_data = requests.get(quote_url).json()
-        
+        data2 = pd.DataFrame(quote_data)
         try:
             if quote_data['code'] == 400:
                 print("Invalid Symbol")
         except KeyError:
-            print(ticker_symbol)
-            print(quote_data)
+            print(data2)
 
 class time_series:
     def ts_display(start):
         ticker_symbol = input("Enter ticker symbol you want to view:" ).upper()
         ts_url = f"{base_url}time_series?symbol={ticker_symbol}&interval=1day&apikey={creds.api_key}"
         ts_data = requests.get(ts_url).json()
+        data3 = pd.DataFrame(ts_data["values"])
         
         try:
             if ts_data['code'] == 400:
                 print("Invalid Symbol")
         except KeyError:
-            print(ts_data["values"])
+            print(data3)
 
 
 
