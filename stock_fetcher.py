@@ -36,12 +36,28 @@ class quotes:
         ticker_symbol = input("Enter ticker symbol you want to view: ").upper()
         quote_url = f"{base_url}quote?symbol={ticker_symbol}&apikey={creds.api_key}"
         quote_data = requests.get(quote_url).json()
-        data2 = pd.DataFrame(quote_data)
-        try:
-            if quote_data['code'] == 400:
-                print("Invalid Symbol")
-        except KeyError:
-            print(data2)
+        #data2 = pd.DataFrame(quote_data)
+
+        # try:
+        #     if quote_data['code'] == 400:
+        #         print("Invalid Symbol")
+        # except KeyError:
+        #     print()
+
+        print("symbol : %s" %  quote_data.get('symbol'))
+        print("name : %s" %  quote_data.get('name'))
+        print("exchange : %s" %  quote_data.get('exchange'))
+        print("datetime : %s" %  quote_data.get('datetime'))
+        print("open : %s" %  quote_data.get('open'))
+        print("high : %s" %  quote_data.get('high'))
+        print("low : %s" %  quote_data.get('low'))
+        print("close : %s" %  quote_data.get('close'))
+        print("volume : %s" %  quote_data.get('volume'))
+        print("previous close : %s" %  quote_data.get('previous_close'))
+        print("change : %s" %  quote_data.get('change'))
+        print("percent change : %s" %  quote_data.get('percent_change'))
+        print("average volume : %s" %  quote_data.get('average_volume'))
+        print("fifty-two week : %s" %  quote_data.get('fifty_two_week'))
 
 class time_series:
     def ts_display(start):
