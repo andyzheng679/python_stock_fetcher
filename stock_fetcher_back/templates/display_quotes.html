@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}{{usr}}{% endblock %}
+{% block content %}
+<center>
+<table >
+    <tr>
+      <th>Symbol</th>
+      <td>{{data.symbol}}</td>
+    </tr>
+    <tr>
+        <th>Name</th>
+        <td>{{data.name}}</td>
+      </tr>
+      <tr>
+        <th>Exchange</th>
+        <td>{{data.exchange}}</td>
+      </tr>
+      <tr>
+        <th>Mic Code</th>
+        <td>{{data.mic_code}}</td>
+      </tr>
+      <tr>
+        <th>Currency</th>
+        <td>{{data.currency}}</td>
+      </tr>
+      <tr>
+        <th>Date Time</th>
+        <td>{{data.datetime}}</td>
+      </tr>
+      <tr>
+        <th>Time Stamp</th>
+        <td>{{data.timestamp}}</td>
+      </tr>
+      <tr>
+        <th>Open</th>
+        <td>{{data.open}}</td>
+      </tr>
+      <tr>
+        <th>High</th>
+        <td>{{data.high}}</td>
+      </tr>
+      <tr>
+        <th>Low</th>
+        <td>{{data.low}}</td>
+      </tr>
+      <tr>
+        <th>Close</th>
+        <td>{{data.close}}</td>
+      </tr>
+      <tr>
+        <th>Volume</th>
+        <td>{{data.volume}}</td>
+      </tr>
+      <tr>
+        <th>Previous Close</th>
+        <td>{{data.previous_close}}</td>
+      </tr>
+      <tr>
+        <th>Change</th>
+        <td>{{data.change}}</td>
+      </tr>
+      <tr>
+        <th>Percent Change</th>
+        <td>{{data.percent_change}}</td>
+      </tr>
+      <tr>
+        <th>Average Volume</th>
+        <td>{{data.average_volume}}</td>
+      </tr>
+      <tr>
+        <th>Is Market Open</th>
+        <td>{{data.is_market_open}}</td>
+      </tr>
+      <tr>
+        <th>Fifty Two Week</th>
+        <td>{{data.fifty_two_week}}</td>
+      </tr>
+</center>
+
+{% endblock %}
