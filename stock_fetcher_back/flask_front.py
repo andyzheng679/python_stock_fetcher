@@ -58,6 +58,6 @@ def display_ts(usr):
 
 
 
-
+# remember debug=True when working on this 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
