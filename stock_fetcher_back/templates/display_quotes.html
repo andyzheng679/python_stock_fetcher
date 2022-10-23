@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% block title %}{{usr}}{% endblock %}
 {% block content %}
+<h1><center><a href="{{ url_for('rtp') }}">Click here for Real-Time-Price</a></center></h1>
+<h1><center><a href="{{ url_for('quotes') }}">Click here for Quotes</a></center></h1>
+<h1><center><a href="{{ url_for('ts') }}">Click here for Time-Series</a></center></h1>
+
 <center>
 <table >
     <tr>

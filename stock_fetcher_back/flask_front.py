@@ -41,7 +41,7 @@ def ts():
 @app.route("/<usr>_real_time_price")
 def display_rtp(usr):
     data = real_time_price().rtp(usr)
-    return f"<center><h1>{usr}</h1><h2>{data}</h2></center>"
+    return render_template("display_rtp.html",data=data,usr=usr)
 
 @app.route("/<usr>_real_quotes")
 def display_quotes(usr):
@@ -60,4 +60,4 @@ def display_ts(usr):
 
 # remember debug=True when working on this 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

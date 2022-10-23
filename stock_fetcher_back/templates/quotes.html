@@ -2,8 +2,11 @@
 {% block title %}Quotes{% endblock %}
 
 {% block content %}
+<h1><center><a href="{{ url_for('rtp') }}">Click here for Real-Time-Price</a></center></h1>
+<h1><center><a href="{{ url_for('ts') }}">Click here for Time-Series</a></center></h1>
+
 <form action="#" method="post">
-    <center><p>Enter stock ticker symbol for Quotes:</p>
+    <center><p><b>Enter stock ticker symbol for Quotes:</b></p>
     <p><input type="text" name="quotes"></p> 
     <p><input type="submit" value="submit"></p></center>
 </form>
